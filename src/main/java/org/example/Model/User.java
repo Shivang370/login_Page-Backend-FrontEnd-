@@ -2,74 +2,65 @@ package org.example.Model;
 
 import javax.persistence.*;
 
-@Entity(name = "Users")
+@Entity(name ="user")
 public class User {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Integer Id;
-    private String Name;
-    private String Email;
-    private String Password;
-    private String Contact;
-
-    public User(Integer id, String name, String email, String password, String contact) {
-        Id = id;
-        Name = name;
-        Email = email;
-        Password = password;
-        Contact = contact;
-    }
-    public User(){};
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Integer id;
+    private String name;
+    private String email;
+    private String password;
+    private String contact;
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 
     public String getContact() {
-        return Contact;
+        return contact;
     }
 
     public void setContact(String contact) {
-        Contact = contact;
+        this.contact = contact;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "Id=" + Id +
-                ", Name='" + Name + '\'' +
-                ", Email='" + Email + '\'' +
-                ", Password='" + Password + '\'' +
-                ", Contact='" + Contact + '\'' +
+                "Id=" + id +
+                ", Name='" + name + '\'' +
+                ", Email='" + email + '\'' +
+                ", Password='" + password + '\'' +
+                ", Contact='" + contact + '\'' +
                 '}';
     }
 }
