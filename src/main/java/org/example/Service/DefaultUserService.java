@@ -23,19 +23,19 @@ public class DefaultUserService implements UserService{
         return userRepository.findAll();
     }
 
-//    public String findByEmail(String email) {
-//        List<User> users=userRepository.findAll();
-//        for(User user: users)
-//        {
-//            if(user.getEmail().equals(email))
-//                return user.getPassword();
-//        }
-//        return "";
-//    }
-//
-//    @Override
-//    public User SaveUsers(User user) {
-//        return  userRepository.saveAndFlush(user);
-//    }
+    public String findByEmail(String email) {
+        List<User> users=userRepository.findAll();
+        for(User user: users)
+        {
+            if(user.getEmail().equals(email))
+                return user.getPassword();
+        }
+        return "";
+    }
+
+    @Override
+    public User SaveUsers(User user) {
+        return  userRepository.saveAndFlush(user);
+    }
 }
 
