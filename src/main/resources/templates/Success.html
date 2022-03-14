@@ -8,9 +8,47 @@
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h2>Welcome <span th:text="${user.name}"></span>
-</h2>
-<a th:href="@{AddUser}">Add User!!</a>
-<a th:href="@{Logout}">Logout!!</a>
+<div class="container">
+    <h2>Welcome <span th:text="${user.name}"></span> !!</h2>
+</div>
+<div class="button"> <button type="submit" class="btn btn-blue btn-block"><a th:href="@{AddUser}">Add User</a></button> <button type="submit" class="btn btn-green btn-block"><a th:href="@{Logout}">Logout</a></button> </div>
+
+<style>
+body {
+  background-image: url('Welcome_Page.jpg');
+  background-repeat: no-repeat;
+}
+.padding {
+padding: 5rem !important
+}
+h2{
+color:#000;
+font-size: 80px;
+font-style: italic;
+width: 10;
+overflow: hidden;
+text-align: right;
+margin-top: 150px;
+}
+.btn-blue {
+  width: fit-content;
+  background-color: #4CAF50;
+  display: inline-block;
+  text-align: center;
+  padding: 15px 28px;
+  margin-left: 600px;
+  margin-top: 8px;
+}
+
+.btn-green {
+  width: fit-content;
+  background-color: #4CAF50;
+  display: inline-block;
+  text-align: center;
+  padding: 15px 32px;
+  margin-left: 50px;;
+}
+
+</style>
 </body>
 </html>
