@@ -1,9 +1,13 @@
 package org.example.Model;
 
+import org.springframework.data.redis.core.RedisHash;
+
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity(name ="user")
-public class User {
+//@RedisHash("User")
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)

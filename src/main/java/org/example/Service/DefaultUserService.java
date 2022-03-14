@@ -2,6 +2,7 @@ package org.example.Service;
 import org.example.Model.User;
 import org.example.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,22 +21,13 @@ public class DefaultUserService implements UserService{
 
     @Override
     public List<User> GetAllUsers() {
+        System.out.println("hello to Users -DB");
         return userRepository.findAll();
     }
 
-    public String findByEmail(String email) {
-        List<User> users=userRepository.findAll();
-        for(User user: users)
-        {
-            if(user.getEmail().equals(email))
-                return user.getPassword();
-        }
-        return "";
-    }
-
     @Override
-    public User SaveUsers(User user) {
-        return  userRepository.saveAndFlush(user);
+    public void SaveUsers(User user) {
+        userRepository.saveAndFlush(user);
     }
 }
 
